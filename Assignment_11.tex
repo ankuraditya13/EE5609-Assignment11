@@ -158,20 +158,27 @@ It could be easily proven that both matrices $\vec{A}$ and $\vec{B}$ are inverti
 \begin{align}
 \vec{A}+\vec{B} = \vec{0}. 
 \end{align} 
-But $\vec{0}$ is non-invertible as $\mydet{\vec{0}}$ = 0.\\ \textbf{$\therefore$ the set of invertible matrices are not closed under addition. Hence not a subspace of $\vec{V}$.}
+Now the zero matrix $\vec{0}$ is non-invertible as,
+\begin{align}
+rank(\vec{0}_{nxn}) = rank\brak{\myvec{0&0&\cdots&0\\0&0&\cdots&0\\\vdots&\vdots&\ddots&\vdots\\0&0&\cdots&0}_{nxn}}= 0
+\end{align} 
+\textbf{$\therefore$ the set of invertible matrices are not closed under addition. Hence not a subspace of $\vec{V}$.}
 \section{Solution 2}
 Let the matrices $\vec{A_1}$, $\vec{A_2}$.....$\vec{A_n}$ $\in \vec{V}$, be set of non-invertible matrix. For them to be a subspace they need to be closed under addition. Let,
 \begin{align}
-\vec{A_1} = \myvec{1&0&.....&0\\0&0&.....&0\\.&.&.....&.\\.&.&.....&.\\.&.&.....&.\\0&0&.....&0}_{nxn}\\
-\vec{A_2} = \myvec{0&0&.....&0\\0&1&.....&0\\.&.&.....&.\\.&.&.....&.\\.&.&.....&.\\0&0&.....&0}_{nxn}\\
-\vec{A_n}=\myvec{0&0&.....&0\\0&0&.....&0\\.&.&.....&.\\.&.&.....&.\\.&.&.....&.\\0&0&.....&1}_{nxn}
+\vec{A_1} = \myvec{1&0&\cdots&0\\0&0&\cdots&0\\\vdots&\vdots&\vdots&\vdots\\0&0&\cdots&0}_{nxn}\\
+\vec{A_2} = \myvec{0&0&\cdots&0\\0&1&\cdots&0\\0&0&\cdots&0\\\vdots&\vdots&\vdots&\vdots\\0&0&\cdots&0}_{nxn}\\
+\vec{A_n}=\myvec{0&0&\cdots&0\\0&0&\cdots&0\\\vdots&\vdots&\vdots&\vdots\\0&0&\cdots&1}_{nxn}\\
 \end{align}  
 It could be easily proven that matrices $\vec{A_1}$, $\vec{A_2}$.....$\vec{A_n}$ are non-invertible as their determinant = 0. Now,
 \begin{align}
-\vec{A_1}+\vec{A_2}+\vec{A_3}+......\vec{A_n} = \vec{I}_{nxn}
+\vec{A_1}+\vec{A_2}+\vec{A_3}+\cdots\vec{A_n} = \vec{I}_{nxn}
 \end{align}
-But Identity matrix $\vec{I}$ is an invertible matrix as $\mydet{\vec{I}}$ = 1.
-\textbf{$\therefore$ the set of non-invertible matrices are not closed under addition. Hence not a subspace of $\vec{V}$.}
+Now the identity matrix $\vec{I}$ is invertible as,
+\begin{align}
+rank(\vec{I}_{nxn}) = rank\brak{\myvec{1&0&\cdots&0\\0&1&\cdots&0\\\vdots&\vdots&\ddots&\vdots\\0&0&\cdots&1}_{nxn}}= n
+\end{align} 
+or it is a full rank matrix as there are n pivots. \textbf{$\therefore$ the set of non-invertible matrices are not closed under addition. Hence not a subspace of $\vec{V}$.}
 \section{Solution 3}
 \textbf{Theorem 1:}. A non-empty subset W of V is a subspace of V if and only if for each pair of vectors $\alpha$, $\beta$ in W and each scalar c $\in$ F, the vector $c\alpha+\beta \in$ W. \\
 Let the matrices $\vec{A_1}$ and $\vec{A_2}$ satisfy,
