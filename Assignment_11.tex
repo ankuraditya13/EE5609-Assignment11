@@ -147,40 +147,46 @@ Let $\vec{F}$ be a field and let n be a positive integer (n$\geq$2). Let $\vec{V
 \item all $\vec{A}$ such that $\vec{AB}=\vec{BA}$, where $\vec{B}$ is some fixed matrix in $\vec{V}$;
 \item all $\vec{A}$ such that $\vec{A}^2 = \vec{A}$.
 \end{enumerate}
-\section{Solution 1}
-Let the matrices $\vec{A}$ and $\vec{B}$ $\in$ $\vec{V}$, be set of invertible matrix. For them to be a subspace they need to be closed under addition.
+\section{Solutions}
+\begin{enumerate}
+\item Let the matrices $\vec{A}$ and $\vec{B}$ $\in$ $\vec{V}$, be set of invertible matrix. For them to be a subspace they need to be closed under addition.
 Let,
 \begin{align}
 \vec{A} = \vec{I}\\
 \vec{B} = -\vec{I}
 \end{align}  
-It could be easily proven that both matrices $\vec{A}$ and $\vec{B}$ are invertible as their determinant $\neq$ 0. Now,
+It could be easily proven that both matrices $\vec{A}$ and $\vec{B}$ are invertible as,
 \begin{align}
-\vec{A}+\vec{B} = \vec{0}. 
+rank(\vec{I}_{nxn}) = rank\brak{\myvec{1&0&\cdots&0\\0&1&\cdots&0\\\vdots&\vdots&\ddots&\vdots\\0&0&\cdots&1}_{nxn}}\\\implies rank(\vec{-I}_{nxn}) = rank(\vec{I}_{nxn}) = n
+\label{i}
 \end{align} 
-Now the zero matrix $\vec{0}$ is non-invertible as,
+or it is a full rank matrix as there are n pivots.
 \begin{align}
-rank(\vec{0}_{nxn}) = rank\brak{\myvec{0&0&\cdots&0\\0&0&\cdots&0\\\vdots&\vdots&\ddots&\vdots\\0&0&\cdots&0}_{nxn}}= 0
+\therefore\vec{A}+\vec{B} = \vec{0}. 
+\end{align} 
+But the zero matrix $\vec{0}$ is non-invertible as,
+\begin{align}
+rank(\vec{0}_{nxn}) = rank\brak{\myvec{0&0&\cdots&0\\0&0&\cdots&0\\\vdots&\vdots&\ddots&\vdots\\0&0&\cdots&0}_{nxn}}\\\implies rank(\vec{0}_{nxn}) = 0
 \end{align} 
 \textbf{$\therefore$ the set of invertible matrices are not closed under addition. Hence not a subspace of $\vec{V}$.}
-\section{Solution 2}
-Let the matrices $\vec{A_1}$, $\vec{A_2}$.....$\vec{A_n}$ $\in \vec{V}$, be set of non-invertible matrix. For them to be a subspace they need to be closed under addition. Let,
+
+\item Let the matrices $\vec{A_1}$, $\vec{A_2},\cdots, \vec{A_n}$ $\in \vec{V}$, be set of non-invertible matrix. For them to be a subspace they need to be closed under addition. Let,
 \begin{align}
 \vec{A_1} = \myvec{1&0&\cdots&0\\0&0&\cdots&0\\\vdots&\vdots&\vdots&\vdots\\0&0&\cdots&0}_{nxn}\\
 \vec{A_2} = \myvec{0&0&\cdots&0\\0&1&\cdots&0\\0&0&\cdots&0\\\vdots&\vdots&\vdots&\vdots\\0&0&\cdots&0}_{nxn}\\
 \vec{A_n}=\myvec{0&0&\cdots&0\\0&0&\cdots&0\\\vdots&\vdots&\vdots&\vdots\\0&0&\cdots&1}_{nxn}\\
 \end{align}  
-It could be easily proven that matrices $\vec{A_1}$, $\vec{A_2}$.....$\vec{A_n}$ are non-invertible as their determinant = 0. Now,
+It could be proven that matrices $\vec{A_1}$, $\vec{A_2}, \cdots, \vec{A_n}$ are non-invertible as,
 \begin{align}
-\vec{A_1}+\vec{A_2}+\vec{A_3}+\cdots\vec{A_n} = \vec{I}_{nxn}
+rank(\vec{A_1}) = rank\brak{\myvec{1&0&\cdots&0\\0&0&\cdots&0\\\vdots&\vdots&\ddots&\vdots\\0&0&\cdots&0}}\\
+\implies rank(\vec{A_1}) = 1
 \end{align}
-Now the identity matrix $\vec{I}$ is invertible as,
+or there is only one pivot hence rank is 1. 
 \begin{align}
-rank(\vec{I}_{nxn}) = rank\brak{\myvec{1&0&\cdots&0\\0&1&\cdots&0\\\vdots&\vdots&\ddots&\vdots\\0&0&\cdots&1}_{nxn}}= n
-\end{align} 
-or it is a full rank matrix as there are n pivots. \textbf{$\therefore$ the set of non-invertible matrices are not closed under addition. Hence not a subspace of $\vec{V}$.}
-\section{Solution 3}
-\textbf{Theorem 1:}. A non-empty subset W of V is a subspace of V if and only if for each pair of vectors $\alpha$, $\beta$ in W and each scalar c $\in$ F, the vector $c\alpha+\beta \in$ W. \\
+\implies \vec{A_1}+\vec{A_2}+\vec{A_3}+\cdots\vec{A_n} = \vec{I}_{nxn}
+\end{align}
+Now the identity matrix $\vec{I}$ is invertible as shown in equation \eqref{i}. \textbf{$\therefore$ the set of non-invertible matrices are not closed under addition. Hence not a subspace of $\vec{V}$.}
+\item \textbf{Theorem 1:}. A non-empty subset W of V is a subspace of V if and only if for each pair of vectors $\alpha$, $\beta$ in W and each scalar c $\in$ F, the vector $c\alpha+\beta \in$ W. \\
 Let the matrices $\vec{A_1}$ and $\vec{A_2}$ satisfy,
 \begin{align}
 \vec{A_1B}=\vec{BA_1}\label{s1}\\
@@ -196,9 +202,8 @@ Substituting from equations \eqref{s1} and \eqref{s2} to \eqref{s3},
 \implies \vec{B}c\vec{A_1} +\vec{BA_2}\\
 \implies \vec{B}\brak{c\vec{A_1}+\vec{A_2}}
 \end{align}
-\textbf{Thus, $\brak{c\vec{A_1}+\vec{A_2}}$ satisfy the criteria and from Theorem-1 it can be seen that the set is a subspace.} 
-\section{Solution 4}
-Let $\vec{A}$ and $\vec{B} \in \vec{V}$ be set of matrices such that,
+\textbf{Thus, $\brak{c\vec{A_1}+\vec{A_2}}$ satisfy the criteria and from Theorem-1 it can be seen that the set is a subspace of $\vec{V}$.} 
+\item Let $\vec{A}$ and $\vec{B} \in \vec{V}$ be set of matrices such that,
 \begin{align}
 \vec{A^2}=\vec{A}\\
 \vec{B^2}=\vec{B}
@@ -226,5 +231,6 @@ Hence, clearly from equations \eqref{e1} and \eqref{e2},
 \begin{align}
 \brak{\vec{A+B}}^2 \neq \vec{A+B}
 \end{align}
-\textbf{$\therefore$ the set of all $\vec{A}$ such that $\vec{A}^2=\vec{A}$ is not closed under addition. Hence not a subspace in $\vec{V}$.}
+\textbf{$\therefore$ the set of all $\vec{A}$ such that $\vec{A}^2=\vec{A}$ is not closed under addition. Hence, not a subspace of $\vec{V}$.}
+\end{enumerate}
 \end{document}
